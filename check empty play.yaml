@@ -18,11 +18,11 @@
     ignore_errors: true
 
   - name: Run only if the task that registered the "result" variable fails
-    ansible.builtin.command: /bin/something
+    ansible.builtin.command: /bin/dated
     when: result is failed
 
   - name: Run only if the task that registered the "result" variable succeeds
-    ansible.builtin.command: /bin/something_else
+    ansible.builtin.command: /bin/date
     when: result is succeeded
 
   - name: Run only if the task that registered the "result" variable is skipped
