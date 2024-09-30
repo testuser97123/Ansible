@@ -1,6 +1,6 @@
 ---
 - name: 
-  hosts: 192.168.0.132
+  hosts: remote
   tasks: 
     - name: hello world 
       debug: 
