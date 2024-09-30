@@ -30,5 +30,5 @@
     when: result is skipped
 
   - name: Run only if the task that registered the "result" variable changed something.
-    ansible.builtin.command: /bin/still/something_else
+    ansible.builtin.command: /bin/uptime
     when: result is changed
