@@ -8,3 +8,6 @@
     - name: Perform action based on time
       debug:
         msg: "Good {{ 'morning' if current_hour.stdout|int < 12 else 'afternoon' }}"
+    - name: Perform action based on time
+      debug:
+        msg: "Good {{ 'morning' if current_hour.stdout|int > 12 else 'afterevening' }}"
