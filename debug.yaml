@@ -11,7 +11,7 @@
     - name: Perform action based on time
       debug:
         msg: "Good {{ 'morning' if current_hour.stdout|int < 9 else 'afterevening' }}"
----
+
 - name: Test play
   hosts: remote
   tasks:
