@@ -10,4 +10,15 @@
         msg: "Good {{ 'morning' if current_hour.stdout|int < 12 else 'afternoon' }}"
     - name: Perform action based on time
       debug:
-        msg: "Good {{ 'morning' if current_hour.stdout|int > 9 else 'afterevening' }}"
+        msg: "Good {{ 'morning' if current_hour.stdout|int < 9 else 'afterevening' }}"
+---
+- name: Test play
+  hosts: remote
+  tasks:
+      - name: Register a variable
+        ansible.builtin.shell: cat /etc/motd
+        register: motd_contents
+
+      - name: Use the variable in conditional statement
+        ansible.builtin.shell: echo "motd contains the word hi"
+        when: motd_contents.stdout.find('hi') != -1
